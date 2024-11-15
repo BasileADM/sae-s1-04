@@ -4,7 +4,8 @@ body {
     box-sizing: border-box;
     font-family: "Montserrat";
     padding-top: 60px;
-  
+  padding-left: 19px;
+  padding-right: 19px;
 }
 .nav {
     
@@ -127,10 +128,16 @@ footer p {
  
     font-size: 18px;
     font-weight: 500;
-    margin: 10px;
+   
     border: 1px #cfd9de solid;
     padding: 19px;
+    
     border-radius: 5px;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
 }
 .question {
     font-family: "Montserrat";
