@@ -1,0 +1,269 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat";
+    padding-top: 60px;
+  
+}
+.nav {
+    
+    align-items: center;
+    display: flex;
+    top: 0;
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    z-index: 1;
+    border-bottom: solid 1px #eff3f4;
+    background: rgb(255,255,255,0.9);
+    backdrop-filter: blur(10px);
+    justify-content: space-between; 
+    z-index: 1;
+}
+footer{
+   
+    display: flex;
+    bottom: 0;
+    position: relative;
+  
+    width: 100%;
+    z-index: 0;
+    margin-bottom: 15px;
+    background-color: #ffffff;
+    justify-content: center; 
+    cursor: default;
+    font-size: 18px;
+    font-weight: 500;
+    border-top: 1px #ededed solid;
+   
+}
+
+footer p {
+    text-align: center;
+}
+
+.Logo {
+    position: relative;
+    margin-left: 20px;
+    cursor: pointer;
+    position: relative;
+    top: 3px;
+    max-width: 100%;
+    height: auto;
+}
+
+.Boutons {
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 18px;
+    position: relative;
+    display: inline-block;
+    border: none;
+    background-color: transparent;
+    margin-left: 10px;
+}
+.Boutons::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ad0000;
+    border-radius: 100px;
+    transform: scaleX(0);
+    transform-origin: 0 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.Boutons:hover::before {
+    transform: scaleX(1);
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    margin-right: 20px; 
+}
+
+.menu-icon span {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    border-radius: 2px;
+    
+}
+
+.menu-boutons {
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 18px;
+    position: relative;
+    display: inline-block;
+    border: none;
+    background-color: transparent;
+    margin-left:10px ;
+    text-decoration: none;
+    color: #000;
+    display: none;
+}
+.presentation {
+    height: 100%;
+    border-right-style: solid;
+    border-right-color: #eff3f4;
+    border-right-width: 1px;
+}
+
+.text-presentation {
+ 
+    font-size: 18px;
+    font-weight: 500;
+    margin: 10px;
+    border: 1px #cfd9de solid;
+    padding: 19px;
+    border-radius: 5px;
+}
+.question {
+    font-family: "Montserrat";
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .reponse {
+    font-family: "Montserrat";
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .reponse li {
+    margin-bottom: 01px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .reponse li::before {
+    content: "\2023"; 
+    font-size: 1.2em;
+    margin-right: 1px;
+  }
+  
+  .reponse li strong {
+    font-weight: bold;
+  }
+  .tableau {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .tableau th, .tableau td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .tableau th {
+    background-color: #f2f2f2;
+  }
+  
+  .tableau tr:nth-child(even) {
+    background-color: #f2f2f2;
+  } 
+  .image{
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 100%;
+    height: auto;
+  }
+  .image2{
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 50%;
+  height: auto;
+}
+.image3{
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 20%;
+  height: auto;
+}
+
+.code {
+    font-family: Consolas, Monaco, monospace;
+    font-size: 14px;
+    color: #333;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow-x: auto;
+  }
+  .titre{
+    text-align: center;
+  }
+
+
+@media (max-width: 600px) {
+    .boutons-box {
+        display: none;
+    }
+    .boutons-box {
+        display: none; 
+    }
+    .menu-toggle {
+        display: block; 
+    }
+    .menu-icon {
+        display: flex; 
+    }
+    .menu-toggle {
+        display: none;
+    }
+    
+    .menu {
+     
+        display: none;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255);
+        position: fixed;
+        top: 60px;
+        right: 0;
+        width: 40%;
+        padding: 20px;
+        border-radius: 5px;
+        border: 1px #cfd9de solid;
+        z-index: 2;
+    }
+    .menu-toggle:checked + .menu-icon + .menu {
+       
+        display: flex;
+    }
+    .menu-boutons {
+        cursor: pointer;
+        font-family: 'Montserrat';
+        font-weight: 700;
+        font-size: 18px;
+        position: relative;
+        display: inline-block;
+        border: none;
+        background-color: transparent;
+        margin-left:10px ;
+        text-decoration: none;
+        color: #000;
+        margin-top: 5px;
+     
+    }
+   
+
+}

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="icon" type="
+    /png" href="assets/logo.png">
+    <title>Kdou</title>
+</head>
+<body>
+    <nav class="nav">
+        <div class="Logo">
+            <img classe="Logo" src="assets/logo.png" >
+        </div>
+        <a class="boutons-box" href="index.html">
+            <button class="Boutons">Accueil</button>
+        </a>
+        <a class="boutons-box" href="m1.html">
+            <button class="Boutons">Mission 1</button>
+        </a>
+        <a class="boutons-box" href="m2.html">
+            <button class="Boutons">Mission 2</button>
+        </a>
+   
+        <a class="boutons-box" href="conclusion.html">
+            <button class="Boutons">Conclusion</button>
+        </a>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <div class="menu">
+            <a href="index.html" class="menu-boutons">Accueil</a>
+            <a href="m1.html" class="menu-boutons">Mission 1</a>
+            <a href="m2.html" class="menu-boutons">Mission 2</a>
+            <a href="conclusion.html" class="menu-boutons">Conclusion</a>
+        </div>
+    </nav>
+    <h2 class="titre">Mission 3</h2>
+    <article class="text-presentation">
+        <h4 class="question">a. Combien y a-t-il des produits correspondants vendus 50€ ou plus ? On veut les connaître avec leur pays d’origine.</h4>
+    <p class="reponse">Il y a 8 produits de types desserts ou boissons vendus 50 euros ou plus:</p>
+    <ul class="reponse">
+        <li>Jus Kiwina - Royaume-Uni</li>
+        <li>Pimm' s jojo - Australia</li>
+        <li>Bratislava Vodka - Royaume-Uni</li>
+        <li>Rhönbräu Klosterbier - Allemagne</li>
+        <li>Côte de Blaye - France</li>
+        <li>Steeleye Stout - Etats-Unis</li>
+        <li>Sir Rodney's Marmalade Royaume Uni</li>
+        <li>Chang - Royaume-Uni</li>
+    </ul>
+    <p class="reponse">voici le code SQL:</p>
+    <p class="code">
+        SELECT p.NomProd, p.PrixUnit, f.NoFour, f.Societe, p.NoFour <br>
+        FROM Fournisseur f <br>
+        INNER JOIN Produit p ON f.NoFour = p.NoFour <br>
+        WHERE p.PrixUnit >= 50  <br>
+          AND p.CodeCateg IN (1, 3); <br>
+    </p>
+    
+    <h4 class="question">b. Quels sont les pays de provenance de ces catégories ?</h4>
+    <p class="reponse">Les pays de provenance de ces catégories sont:</p>
+    <ul class="reponse">
+        <li>Allemagne</li>
+        <li>Australie</li>
+        <li>Bresil</li>
+        <li>Canada</li>
+        <li>Etats Unis</li>
+        <li>Finlande</li>
+        <li>France</li>
+        <li>Pays bas</li>
+        <li>Royaume uni</li>
+        <li>singapour</li>
+        <li>suède</li>
+    </ul>
+    <p class="reponse">voici le code SQL:</p>
+    <p class="code">
+        SELECT DISTINCT Fournisseur.Pays   <br>
+        FROM Fournisseur   <br>
+        INNER JOIN Produit ON Fournisseur.NoFour = Produit.NoFour   <br>
+        WHERE Produit.CodeCateg = 1 OR Produit.CodeCateg = 3; <br>
+     
+        
+        
+     </p>
+    <h4 class="question">c. On veut le chiffre d’affaire généré par catégorie desserts ou catégorie.</h4>
+    <p class="reponse">Le chiffre d’affaire est de 360 309,75 € pour les boissons, 207 326,70 € pour les desserts et au total de 567636.45€</p>
+    <p class="reponse">voici le code SQL:</p>
+    <p class="code">
+        SELECT Categorie.NomCateg, SUM(DetailCommande.PrixUnitCli * DetailCommande.QteCom) AS ChiffreAffaire <br>
+    FROM Categorie <br>
+    INNER JOIN Produit ON Categorie.CodeCateg = Produit.CodeCateg <br>
+    INNER JOIN DetailCommande ON Produit.RefProd = DetailCommande.RefProd <br>
+    WHERE Categorie.NomCateg = 'Desserts' OR Categorie.NomCateg = 'Boissons' <br>
+    GROUP BY Categorie.NomCateg; <br>
+      
+      
+       
+    </p>
+   
+    </article>
+     <article class="text-presentation">
+        <h3 class="question">2) KDou se demande ce qu’il faut changer dans son offre, voici quelques indicateurs ?</h3>
+        <h4 class="question">a) Donner des informations sur les fournisseurs qui proposent des produits qui ne sont pas commandés actuellement ?</h4>
+        <p class="reponse">On fait une requête de non-correspondance dans Access pour obtenir les produits non commandés pour les lier ensuite au fournisseur. On obtient donc cette table résultat donnant les informations des fournisseurs qui n'ont pas eu de commande sur certains produits :</p>
+        <img src = "assets/sae3/Q2a.jpg" class = "assets" width="500"/> 
+        <p class="reponse">Et ce code SQL :</p>
+        <p class="code">
+        SELECT Fournisseur.*<br>
+        FROM Categorie
+        INNER JOIN (Fournisseur INNER JOIN (Produit LEFT JOIN DetailCommande ON Produit.[RefProd] =
+        DetailCommande.[RefProd]) ON Fournisseur.NoFour =
+        Produit.NoFour)<br>
+        ON Categorie.CodeCateg = Produit.CodeCateg<br>
+        WHERE DetailCommande.RefProd IS NULL;
+        </p>
+        <h4 class="question">b)  Combien y–a-t-il de produits non commandés par catégorie ?</h4>
+        <p class="reponse">Pour obtenir le nombre de produits non commandés par catégorie, on utilise la même requête qu'avant mais en ajoutant la table catégorie avec quelques opérations ce qui donne le tableau suivant :</p>
+        <img src = "assets/sae3/Q2b.jpg" class = "assets" width="500"/> 
+        <p class="reponse">Avec la requête QBE suivante :</p>
+        <p class="reponse">Et le code SQL ainsi obtenu :</p>
+        <p class="code">
+        SELECT Categorie.CodeCateg, Count(Categorie.CodeCateg) AS
+        CompteDeCodeCateg <br>FROM Categorie INNER JOIN (Fournisseur
+        INNER JOIN (Produit LEFT JOIN DetailCommande ON
+        Produit.[RefProd] = DetailCommande.[RefProd]) ON
+        Fournisseur.NoFour = Produit.NoFour) <br>ON Categorie.CodeCateg =
+        Produit.CodeCateg <br>GROUP BY DetailCommande.RefProd,
+        Categorie.CodeCateg <br>HAVING (((DetailCommande.RefProd) Is
+        Null));
+        </p>
+        <h4 class="question">c) Quels sont les pays qui ont une offre importante de produit ?</h4>
+        <p class="reponse">Pour cette question il suffit simplement de regrouper les pays avec les noms semblables pour voir lesquels sont les plus nombreux, on obtient ainsi ce tableau :</p>
+        <img src = "assets/sae3/Q2c1.jpg" class = "assets" width="500"/> 
+        <p class="reponse">Avec cette requête QBE :</p>
+        <img src = "assets/sae3/Q2c2.jpg" class = "assets" width="500"/> 
+        <p class="reponse">Et donc ce code SQL :</p>
+        <p class="code">
+        SELECT Fournisseur.Pays, Count(Fournisseur.Pays) AS
+        CompteDePays<br> FROM Fournisseur <br>GROUP BY Fournisseur.Pays;
+        </p>
+        <p class="reponse">Mais évidemment à cause de la mauvaise qualité de la base de données, on voit que certains pays ont 2 lignes au lieu d'une. Comme ça la réponse serait donc : France. Cependant, en essayant de combiner les pays, on trouve que les Etats-Unis et l'Australie ont des offres aussi importantes que la France. Avec le tableau corrigé, on a donc :</p>
+        <table class="reponse">
+            <tr>
+                <th>Pays</th>
+                <th>Offre</th>
+            </tr>
+            <tr>Australia</td><td>4</td></tr>
+            <tr><td>Etats Unis</td><td>4</td></tr>
+            <tr><td>France</td><td>4</td></tr>
+            <tr><td>Allemagne</td><td>3</td></tr>
+            <tr><td>Brésil</td><td>3</td></tr>
+            <tr><td>Canada</td><td>3</td></tr>
+            <tr><td>Italie</td><td>2</td></tr>
+            <tr><td>Japon</td><td>2</td></tr>
+            <tr><td>Suède</td><td>2</td></tr>
+            <tr><td>Royaume Uni</td><td>2</td></tr>
+            <tr><td>Norvège</td><td>1</td></tr>
+            <tr><td>Pays-Bas</td><td>1</td></tr>
+            <tr><td>Danemark</td><td>1</td></tr>
+            <tr><td>Espagne</td><td>1</td></tr>
+            <tr><td>Finlande</td><td>1</td></tr>
+            <tr><td>Singapour</td><td>1</td></tr>
+        </table>
+    
+       
+    </article>
+    <article class="text-presentation">
+        <h3 class="question">3) KDou étudie les provenances de ses produits :</h3>
+           <h4 class="question">a) Pour l’Allemagne pays proche, quels sont les desserts ou boissons vendus à moins de 100 euros ?</h4>
+           <p class="reponse">Pour obtenir les boissons et les desserts venant d’Allemagne à moins de 100 euros, on fait la requête SQL suivante :</p>
+           <p class="code">
+           SELECT Produit.NomProd<br>
+           FROM Fournisseur <br>INNER JOIN (Categorie INNER JOIN
+           Produit ON Categorie.CodeCateg = Produit.CodeCateg) ON
+           Fournisseur.NoFour = Produit.NoFour<br>
+           WHERE (((Categorie.NomCateg)="Boissons" Or
+           (Categorie.NomCateg)="Desserts") AND
+           ((Fournisseur.Pays)="Allemagne") AND
+           ((Produit.PrixUnit)<100));
+           </p>
+           <p class="reponse">Afin d’obtenir le tableau résultat suivant :</p>
+           <img src = "assets/sae3/Q3a.jpg" class = "image" width="500"/> 
+           <h4 class="question">b) Quels fournisseurs vendent uniquement des boissons ou des desserts ?</h4>
+           <p class="reponse">Pour obtenir les fournisseurs ne produisant que des boissons et des desserts, on utilise une requête avec un -, afin d’obtenir le tableau résultat :</p>
+           <img src = "assets/sae3/Q3b.jpg" class = "image" width="500"/> 
+           <p class="code">
+           SELECT F.Societe, F.NoFour<br>
+           FROM Fournisseur AS F<br>
+           WHERE F.NoFour NOT IN (
+           SELECT F.NoFour<br>
+           FROM Fournisseur F INNER JOIN (Categorie INNER JOIN
+           Produit P ON Categorie.CodeCateg=P.CodeCateg) ON
+           F.NoFour=P.NoFour<br>
+           WHERE NOT (Categorie.NomCateg="Boissons") AND NOT
+           (Categorie.NomCateg="Desserts"));<br>
+           </p>
+           <h4 class="question">c) Y en a-t-il qui vendent les deux boissons et desserts ?</h4>
+           <p class="reponse">La question est posée de manière ambiguë, en effet on ne
+               sait pas si on doit vérifier s' il y a des fournisseurs qui vendent
+               uniquement boisson et dessert en même temps ou si on doit
+               donner tous les fournisseurs vendant les 2 en même temps et
+               aussi éventuellement d’autre chose.
+               On vas ici repondre a la 2eme interprétation avec cette
+               requête SQL :
+               </p>
+           <p class="code">
+           SELECT DISTINCT F.NoFour, F.Societe<br>
+           FROM Fournisseur AS F INNER JOIN (Categorie INNER JOIN
+           Produit AS P ON Categorie.CodeCateg=P.CodeCateg) ON
+           F.NoFour=P.NoFour<br>
+           WHERE Categorie.NomCateg="Boissons" AND F.NoFour IN
+           (SELECT F.NoFour<br>
+           FROM Fournisseur F INNER JOIN (Categorie INNER JOIN
+           Produit P ON Categorie.CodeCateg=P.CodeCateg) ON
+           F.NoFour=P.NoFour<br>
+           WHERE Categorie.NomCateg="Desserts");
+           </p>
+           <p class="reponse">avec donc le resultat suivant :</p>
+           <img src = "assets/sae3/Q3c.jpg" class = "image" width="500"/> 
+           <p class="reponse">Dans les 2 interprétation la réponse est de toute façon oui
+               mais le tableau résultat n’est pas le même.
+               </p>
+           
+    </article>
+    <article class="text-presentation">
+        <h3 class="question">4) KDou étudie ses clients et les remises accordées :</h3>
+        <h4 class="question">a) Un client nantais Le verre à soi souhaite savoir quels autres clients nantais 
+            commandent aussi des produits en Allemagne pour envisager de futures livraisons 
+            groupées.</h4>
+        <p class="reponse">On écrit la sql de cette manière en choisissant les tables et en
+            les joignant ensemble afin d’appliquer les filtres de sélection.
+            </p>
+            <p class="code">
+                SELECT DISTINCT Client.VilleCli, Client.CodeCli, Fournisseur.Pays, Client.ContactCli<br>
+                FROM Client INNER JOIN (Commande INNER JOIN (Fournisseur INNER JOIN (Produit INNER JOIN DetailCommande<br>
+                ON Produit.RefProd = DetailCommande.RefProd) ON Fournisseur.NoFour = Produit.NoFour)<br>
+                ON Commande.NoCom = DetailCommande.NoCom) ON Client.CodeCli = Commande.CodeCli<br>
+                WHERE ((Client.VilleCli)="Nantes") AND ((Fournisseur.Pays)="Allemagne"));<br>
+                </p>
+        <p class="reponse">On obtient cette liste, il s’agit des clients nantais qui
+            commandent aussi des produits en Allemagne.        
+            </p>
+        <img src = "assets/sae3/Q4a2.jpg" class = "image" width="500"/> 
+        <h4 class="question">b) Quels sont couples de clients de Besançon pourrait on créer ?</h4>
+        <p class="reponse">Pour faire le couple on prend les ContactCli qui sont a
+            Client.VilleCli = “Besançon” ce qui nous donne Amaya Christo
+            et Kevin Festhéo.
+            Donc Besançon pourrait créer le couple Amaya Christo et
+            Kevin Festhéo.
+            D’ailleur il y avais une erreur, sur l’un des Besançon il n’y avait
+            pas “ç” mais “c”</p>
+            <p class="code">
+                SELECT Client.ContactCli, Client.VilleCli<br>
+                FROM Client<br>
+                WHERE Client.VilleCli = "Besançon"<br>
+                </p>
+        <img src = "assets/sae3/Q4b2.jpg" class = "image" width="500"/> 
+        <h4 class="question">c) Certains clients n’ont jamais eu la remise la plus importante de 25%. Qui sont-ils ?</h4>
+        <p class="reponse">Quand on prends les codes clients qui ont tout sauf 25%de
+            réductions on tombe sur une grande liste (photo de gauche)
+            si on prends juste les noms pour éviter les doublons, on
+            obtient une liste plus courte (photo de droite)
+            </p>
+        <img src = "assets/sae3/Q4c1.jpg" class = "image" width="500"/> 
+        <img src = "assets/sae3/Q4c2.jpg" class = "image3" width="500"/> 
+        <p class="code">
+            SELECT DISTINCT C.CodeCli<br>
+            FROM (Client AS C INNER JOIN Commande CO ON C.CodeCli = CO.CodeCli)<br>
+            INNER JOIN DetailCommande D ON CO.NoCom = D.NoCom<br>
+            WHERE NOT (D.Remise) = 0.25;<br>
+            </p>
+        <h4 class="question">d) Quels produits n’ont eu que des remises de 10% ou 20% ou pas de remise ?</h4>
+        <p class="reponse">Les Produits qui ont recu que des remises sont les suivants
+        </p>
+        <p class="code">
+            SELECT DISTINCT P.RefProd, P.nomProd<br>
+            FROM Produit AS P INNER JOIN DetailCommande AS DC ON P.RefProd = DC.RefProd<br>
+            WHERE ((DC.Remise) IN (0,0.1,0.2))<br>
+            GROUP BY P.RefProd, P.nomProd, DC.Remise;<br>
+            </p>
+        <img src = "assets/sae3/Q4d2.jpg" class = "image" width="500"/> 
+    
+    </article>
+    <article class="text-presentation">
+        <h2 class="question">II) Proposition d’indicateurs</h2>
+    </article>
+    <article class="text-presentation">
+        <h3 class="question">1) Basile</h3>
+        <p class="reponse">Cette requête permet à KDou d'identifier les produits locaux afin
+            de réduire son empreinte carbone liée aux importations lointaines.
+            Cela favorise également les fournisseurs locaux, renforçant ainsi la
+            durabilité de la chaîne d'approvisionnement tout en proposant
+            une offre optimisée.</p>
+        <p class="code">
+        SELECT Produit.NomProd, Produit.PrixUnit, Produit.UniteStock,
+        Fournisseur.Societe, Fournisseur.Pays<br>
+        FROM Produit<br>
+        INNER JOIN Fournisseur ON Produit.NoFour = Fournisseur.NoFour<br>
+        WHERE Fournisseur.Pays = 'France';
+        </p>
+    </article>
+    <article class="text-presentation">
+        <h3 class="question">2) Nicolas</h3>
+    <p class="reponse">Pour essayer d’optimiser l’offre on regarde les produits les plus
+        commandés pour en
+        suite voir quel fournisseur les produit, on saura donc quel
+        fournisseur a les produits les plus populaires.
+        Avec une meilleure offre sur les produits tendance KDou pourra
+        avoir un meilleur chiffre d'affaires en effectuant plus de vente sur
+        les produits très demandés. Ces produits pourraient donc être
+        davantage mis en avant comme étant les meilleurs pour booster
+        encore davantage leur popularité et faire un très bon bénéfice.
+        Ainsi on fait la requête SQL suivante :</p>
+    <p class="code">
+        SELECT Produit.NomProd, Count(Produit.RefProd) AS
+        CompteDeRefProd, Fournisseur.NoFour, Fournisseur.Societe,
+        Fournisseur.Contact, Fournisseur.Adresse<br>
+        FROM (Fournisseur INNER JOIN Produit ON Fournisseur.NoFour =
+        Produit.NoFour) INNER JOIN DetailCommande ON
+        Produit.RefProd = DetailCommande.RefProd<br>
+        GROUP BY DetailCommande.RefProd, Produit.RefProd,
+        Produit.NomProd, Produit.NoFour, Fournisseur.NoFour,
+        Fournisseur.Societe, Fournisseur.Contact, Fournisseur.Adresse<br>
+        ORDER BY Count(Produit.RefProd) DESC;
+    </p>
+    <p class="reponse">Pour obtenir ce tableau :</p>
+    <img src = "assets/sae3/Q22.jpg" class = "image" width="500"/> 
+    <p class="reponse">On sait donc maintenant les fournisseur avec des produit
+        populaire sont. avec leur produit :
+        Gai pâturage, avec la Raclette Courdavault
+        Refrescos Americanas LTDA, avec le Guaraná Fantástica
+        Formaggi Fortini s.r.l avec leur Gorgonzola Telino        
+    </p>
+
+    </article>
+    <article class="text-presentation">
+        <h3 class="question">3) Florian</h3>
+    <p class="reponse">L’idée de ma requête est de voir le nom des clients et le nom de
+        leur entreprise ainsi que l’argent qu’ils dépensent pour Kadou. Ça
+        permet à Kadou de voir ses clients les plus dépensiers et ainsi avoir
+        un ordre d’idée des montants qu’ils apportent à l’entreprise. Voici
+        la requête sql ainsi que le tableau obtenu</p>
+    <img src = "assets/sae3/Q231.jpg" class = "image" width="500"/> 
+    <p class="code">
+        SELECT c.ContactCli AS "Nom du Client", c.SocieteCli AS "Société",<br>
+        ROUND(SUM(dc.QteCom * dc.PrixUnitCli * (1 - dc.Remise)), 2) AS "Total des Commandes (€)"<br>
+        FROM (Client AS c<br>
+        INNER JOIN Commande AS co ON c.CodeCli = co.CodeCli)<br>
+        INNER JOIN DetailCommande AS dc ON co.NoCom = dc.NoCom<br>
+        GROUP BY c.ContactCli, c.SocieteCli<br>
+        ORDER BY ROUND(SUM(dc.QteCom * dc.PrixUnitCli * (1 - dc.Remise)), 2) DESC;<br>
+        </p>
+
+    </article>
+
+    <footer>
+        <p>Mission 3<br>A rendre pour le 25 octobre<br>par<br>Florian Puliero<br>Nicolas Chanez<br>Basile Clément</p>
+        
+    </footer>
+   
+</body>

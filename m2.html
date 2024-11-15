@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <title>Kdou</title>
+</head>
+<body>
+    <nav class="nav">
+        <div class="Logo">
+            <img classe="Logo" src="assets/logo.png" >
+        </div>
+        <a class="boutons-box" href="index.html">
+            <button class="Boutons">Accueil</button>
+        </a>
+        <a class="boutons-box" href="m1.html">
+            <button class="Boutons">Mission 1</button>
+        </a>
+      
+        <a class="boutons-box" href="m3.html">
+            <button class="Boutons">Mission 3</button>
+        </a>
+        <a class="boutons-box" href="conclusion.html">
+            <button class="Boutons">Conclusion</button>
+        </a>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <div class="menu">
+            <a href="index.html" class="menu-boutons">Accueil</a>
+            <a href="m1.html" class="menu-boutons">Mission 1</a>
+            <a href="m3.html" class="menu-boutons">Mission 3</a>
+            <a href="conclusion.html" class="menu-boutons">Conclusion</a>
+        </div>
+    </nav>
+    <h2 class="titre">Mission 2</h2>
+    <article class="text-presentation">
+        <h3>a)</h3>  
+        <p class = "question">Donnez l’adresse du fournisseur Marie Delamare ? </p>
+        <p classe ="reponse">Il n'y a pas de Marie Delamare dans le document, cependant il y a une Joana Delamare qui a comme fournisseur Escargots Nouveaux. On obtient cette information en cherchant avec ctrl+f, car on ne peut pas deviner le prénom de Delamare.</p>
+        
+    </article>
+    <article class="text-presentation">
+        <h3>b)</h3>
+        <p class = "question">Quelle est la fonction du contact fournisseur Ma maison ?</p>
+        <p classe ="reponse">Le fournisseur Ma Maison est Jean-Guy Lauzon qui est directeur du marketing. On a cette information en triant la colonne société de la table Fournisseur avec le critère ma maison, et on obtient la ligne en question.</p>
+        <div>
+            <img src = "assets/image_sae2/Qb.png" class="image" width = 600/>
+        </div>
+    </article>
+    <article class="text-presentation">
+        <h3>c)</h3>
+        <p class = "question"> Quels sont les produits d’Italie ou d’Allemagne vendus 50€ ou moins ? On veut les connaître noms et prix, nom du fournisseur, ville et pays d’origine. </p>
+        <p class = "reponse"> Voici les produits venant d’Italie ou d’Allemagne vendus 50€ ou moins avec les noms, prix, nom du fournisseur, ville et pays d’origine</p>
+        <div>
+            <img src = "assets/image_sae2/Qc.png" class="image" width = 600/>
+        </div>
+        <div>
+            <img src = "assets/image_sae2/Qc1.png" class="image" width = 600/>
+        </div>
+        
+    </article>
+    <article class="text-presentation">
+        <h3>d)</h3>
+    <p class = "question"> Quelles sont les catégories de produit vendues par les fournisseurs Singapouriens ?</p>
+    <p class = "reponse">Les deux types de catégories sont Condiments et Boissons.</p>
+    <div>
+        <img src = "assets/image_sae2/Qd.png" class="image" width = 600/>
+    </div>
+    <div>
+        <img src = "assets/image_sae2/Qd1.jpg" class="image" width = 600/>
+    </div>
+    </article>
+    <article class="text-presentation">
+        <h3>e)</h3>
+        <p class = "question">Quelles les produits de type viande livrés à Paris ?</p>
+        <p class = "reponse">Les produits de type viande livré a Paris sont obtenus avec le tableau suivant et permettent d'obtenir cette liste :</p>
+            <ul>
+                <li>Image</li>
+                <li>Alice Mutton</li>
+                <li>Perth Pasties</li>
+                <li>Tourtière crème forestière</li>
+                <li>Tourtière crème forestière</li>
+                <li>Thüringer Rostbratwurst</li>
+                <li>Perth Pasties</li>
+                <li>Perth Pasties</li>
+                <li>Alice Mutton</li>
+                <li>Perth Pasties</li>
+                <li>Tourtière crème forestière</li>
+                <li>Alice Mutton</li>
+                <li>Alice Mutton</li>
+                <li>Alice Mutton</li>
+                <li>Pâté chinois</li>
+                <li>Pâté chinois</li>
+                <li>Thüringer Rostbratwurst</li>
+                <li>Pâté chinois</li>
+                <li>Alice Mutton</li>
+                <li>Tourtière crème forestière</li>
+                <li>Thüringer Rostbratwurst</li>
+                <li>Tourtière crème forestière</li>
+                <li>Pâté chinois</li>
+                <li>Perth Pasties</li>
+                <li>Pâté chinois</li>
+                <li>Pâté chinois</li>
+                <li>Tourtière crème forestière</li>
+                <li>Mishi Kobe Niku</li>
+                <li>Pâté chinois</li>
+                <li>Alice Mutton</li>
+                <li>Perth Pasties</li>
+                <li>Pâté chinois</li>
+            </ul>    
+    </article>
+
+   
+
+<article class="text-presentation">
+    <h3>f)</h3>
+    <p class = "question">Combien y a-t-il de clients nantais ?</p>
+    <p class = "reponse">On prends les Contact clients qui sont liés a la ville de nante: il y en a trois :</p>
+    <div>
+        <img src = "assets/image_sae2/Qf.png" class="image" width = 600/>
+    </div>
+    <div>
+        <img src = "assets/image_sae2/Qf1.png" class="image" width = 600/>
+    </div>
+
+</article>
+<article class="text-presentation">
+    <h3>g)</h3>
+    <p class = "question">Donnez l’offre de produits suédois.</p>
+    <p class = "reponse">En choisissant les bon paramètre sur le tableau QBE, on peut trier les table en obtenant que les produit venant de fournisseur suedois.</p>
+    <div>
+        <img src = "assets/image_sae2/Qg.jpg" class="image" width = 600/>
+    </div>
+
+</article>
+<article class="text-presentation">
+    <h3>h)</h3>
+    <p class = "question">Quels produits (nom, catégorie et prix) a commandé le client Mikal Pavbo ?</p>
+    <p class = "reponse">Il n'y a toujours pas de Mikal Pavbo donc on va considérer qu'il s'agit de Mikal Torin avec le code client : PAVBO. Dans ce cas avec une table QBE complèté on obtient le tableau suivant :</p>
+    <table class="tableau">
+        <tr>
+            <th>NomProd</th>
+            <th>PrixUnit</th>
+            <th>NomCateg</th>
+        </tr>
+        <tr>
+            <td>Gorgonzola Telino</td>
+            <td>10,42 €</td>
+            <td>Produits laitiers</td>
+        </tr>
+        <tr>
+            <td>Chartreuse verte</td>
+            <td>15,00 €</td>
+            <td>Boissons</td>
+        </tr>
+        <tr>
+            <td>Fløtemysost</td>
+            <td>17,92 €</td>
+            <td>Produits laitiers</td>
+        </tr>
+        <tr>
+            <td>Chai</td>
+            <td>27,50 €</td>
+            <td>Boissons</td>
+        </tr>
+        <tr>
+            <td>Boston Crab Meat</td>
+            <td>15,33 €</td>
+            <td>Poissons et fruits de mer</td>
+        </tr>
+        <tr>
+            <td>Perth Pasties</td>
+            <td>27,33 €</td>
+            <td>Viandes</td>
+        </tr>
+        <tr>
+            <td>Geitost</td>
+            <td>2,08 €</td>
+            <td>Produits laitiers</td>
+        </tr>
+        <tr>
+            <td>Raclette Courdavault</td>
+            <td>31,46 €</td>
+            <td>Produits laitiers</td>
+        </tr>
+        <tr>
+            <td>Chef Anton's Cajun Seasoning</td>
+            <td>18,33 €</td>
+            <td>Condiments</td>
+        </tr>
+        <tr>
+            <td>Northwoods Cranberry Sauce</td>
+            <td>33,33 €</td>
+            <td>Condiments</td>
+        </tr>
+        <tr>
+            <td>Thüringer Rostbratwurst</td>
+            <td>103,16 €</td>
+            <td>Viandes</td>
+        </tr>
+        <tr>
+            <td>Steeleye Stout</td>
+            <td>215,00 €</td>
+            <td>Boissons</td>
+        </tr>
+        <tr>
+            <td>Maxilaku</td>
+            <td>16,67 €</td>
+            <td>Desserts</td>
+        </tr>
+        <tr>
+            <td>Konbu</td>
+            <td>5,00 €</td>
+            <td>Poissons et fruits de mer</td>
+        </tr>
+        <tr>
+            <td>Raclette Courdavault</td>
+            <td>31,46 €</td>
+            <td>Produits laitiers</td>
+        </tr>
+        <tr>
+            <td>Guaraná Fantástica</td>
+            <td>13,45 €</td>
+            <td>Boissons</td>
+        </tr>
+        <tr>
+            <td>Filo Mix</td>
+            <td>45,83 €</td>
+            <td>Pâtes et céréales</td>
+        </tr>
+        <tr>
+            <td>Thüringer Rostbratwurst</td>
+            <td>103,16 €</td>
+            <td>Viandes</td>
+        </tr>
+        <tr>
+            <td>Wimmers gute Semmelknödel</td>
+            <td>27,71 €</td>
+            <td>Pâtes et céréales</td>
+        </tr>
+        <tr>
+            <td>Pavlova</td>
+            <td>14,54 €</td>
+            <td>Desserts</td>
+        </tr>
+        <tr>
+            <td>Singaporean Hokkien Fried Mee</td>
+            <td>11,67 €</td>
+            <td>Pâtes et céréales</td>
+        </tr>
+        <tr>
+            <td>Ipoh Coffee</td>
+            <td>38,33 €</td>
+            <td>Boissons</td>
+        </tr>
+        <tr>
+            <td>Gumbär Gummibärchen</td>
+            <td>26,03 €</td>
+            <td>Desserts</td>
+        </tr>
+        <tr>
+            <td>Maple Syrup</td>
+            <td>23,75 €</td>
+            <td>Condiments</td>
+        </tr>
+        <tr>
+            <td>Original Frankfurter grüne Soße</td>
+            <td>10,83 €</td>
+            <td>Condiments</td>
+        </tr>
+        <tr>
+            <td>Uncle Bob's Organic Dried Pears</td>
+            <td>25,00 €</td>
+            <td>Produits secs</td>
+        </tr>
+        <tr>
+            <td>Gnocchi di nonna Alice</td>
+            <td>31,67 €</td>
+            <td>Pâtes et céréales</td>
+        </tr>
+        <tr>
+            <td>Gnocchi di nonna Alice</td>
+            <td>31,67 €</td>
+            <td>Pâtes et céréales</td>
+        </tr>
+        <tr>
+            <td>Aniseed Syrup</td>
+            <td>9,17 €</td>
+            <td>Condiments</td>
+        </tr>
+        <tr>
+            <td>Boston Crab Meat</td>
+            <td>15,33 €</td>
+            <td>Poissons et fruits de mer</td>
+        </tr>
+        <tr>
+            <td>Sugar Pie</td>
+            <td>41,08 €</td>
+            <td>Desserts</td>
+        </tr>
+        <tr>
+            <td>Lakkalikööri</td>
+            <td>15,00 €</td>
+            <td>Boissons</td>
+        </tr>
+        <tr>
+            <td>NuNuCa Nuß-Nougat-Creme</td>
+            <td>11,67 €</td>
+            <td>Desserts</td>
+        </tr>
+        <tr>
+            <td>Thüringer Rostbratwurst</td>
+            <td>103,16 €</td>
+            <td>Viandes</td>
+        </tr>
+        <tr>
+            <td>Singaporean Hokkien Fried Mee</td>
+            <td>11,67 €</td>
+            <td>Pâtes et céréales</td>
+        </tr>
+        <tr>
+            <td>Vegie-spread</td>
+            <td>36,58 €</td>
+            <td>Condiments</td>
+        </tr>
+        <tr>
+            <td>Aniseed Syrup</td>
+            <td>9,17 €</td>
+            <td>Condiments</td>
+        </tr>
+        <tr>
+            <td>Carnarvon Tigers</td>
+            <td>52,08 €</td>
+            <td>Poissons et fruits de mer</td>
+        </tr>
+        <tr>
+            <td>Raclette Courdavault</td>
+            <td>31,46 €</td>
+            <td>Produits laitiers</td>
+        </tr>
+        <tr>
+            <td>Gorgonzola Telino</td>
+            <td>10,42 €</td>
+            <td>Produits laitiers</td>
+        </tr>
+        <tr>
+            <td>Chartreuse verte</td>
+            <td>15,00 €</td>
+            <td>Boissons</td>
+        </tr>
+        <tr>
+            <td>Singaporean Hokkien Fried Mee</td>
+            <td>11,67 €</td>
+            <td>Pâtes et céréales</td>
+        </tr>
+        <tr>
+            <td>Raclette Courdavault</td>
+            <td>31,46 €</td>
+            <td>Produits laitiers</td>
+        </tr>
+        <tr>
+            <td>Outback Lager</td>
+            <td>12,50 €</td>
+            <td>Boissons</td></tr>
+        <tr>
+            <td>Fløtemysost</td>
+            <td>17,92 €</td>
+            <td>Produits laitiers</td>
+        </tr>
+        <tr>
+            <td>Röd Kaviar</td>
+            <td>12,50 €</td>
+            <td>Poissons et fruits de mer</td>
+        </tr>
+        <tr>
+            <td>NuNuCa Nuß-Nougat-Creme</td>
+            <td>11,67 €</td>
+            <td>Desserts</td>
+        </tr>
+        <tr>
+            <td>Boston Crab Meat</td>
+            <td>15,33 €</td>
+            <td>Poissons et fruits de mer</td>
+        </tr>
+        <tr>
+            <td>Raclette Courdavault</td>
+            <td>31,46 €</td>
+            <td>Produits laitiers</td>
+        </tr>
+        <tr>
+            <td>Wimmers gute Semmelknödel</td>
+            <td>27,71 €</td>
+            <td>Pâtes et céréales</td>
+        </tr>
+        <tr>
+            <td>Mozzarella di Giovanni</td>
+            <td>29,00 €</td>
+            <td>Produits laitiers</td>
+        </tr>
+        <tr>
+            <td>Gorgonzola Telino</td>
+            <td>10,42 €</td>
+            <td>Produits laitiers</td>
+        </tr>
+        <tr>
+            <td>Wimmers gute Semmelknödel</td>
+            <td>27,71 €</td><td>Pâtes et céréales</td></tr>
+        <tr>
+            <td>Röd Kaviar</td>
+            <td>12,50 €</td>
+            <td>Poissons et fruits de mer</td>
+        </tr>
+    </table>    
+    <div>
+        <img src = "assets/image_sae2/Qh.jpg" class="image" width = 1000/>
+    </div>
+</article>
+<article class="text-presentation">
+   <h3>i)</h3>
+    <p class = "question">Quelles sont les dates des commandes du client Max Deschamps ?</p>
+    <p class = "reponse">Le client Max Deschamps a commandé aux date indiqué par ce tableau QBE a savoir :</p>
+    <ul>
+        <li>10/08/2020</li>
+        <li>18/08/2021</li>
+        <li>23/10/2021</li>
+        <li>16/12/2018</li>
+        <li>24/12/2021</li>
+        <li>05/03/2019</li>
+        <li>31/03/2021</li>
+        <li>22/05/2021</li>
+        <li>29/06/2021</li>
+        <li>16/07/2021</li>
+        <li>21/07/2019</li>
+        <li>27/08/2021</li>
+        <li>14/10/2021</li>
+        <li>19/11/2022</li>
+        <li>16/04/2021</li>
+        <li>10/05/2021</li>
+        <li>27/05/2021</li>
+        <li>10/06/2021</li>
+    </ul>
+    <div>
+        <img src = "assets/image_sae2/Qi.jpg" class="image" width = 600/>
+    </div>
+</article>
+<article class="text-presentation">
+    <h3>j)</h3>
+    <p class = "question">Donner le prix moyen de vente des produits, le prix minimum et le prix maximum.</p>
+    <p class = "reponse">Pour avoir la moyenne on utilise une operation de moyenne avec le tableau suivant. Pour le maximum et le minimum on tri simplement la colonne prix de la table Produit (on peut également faire une nouvelle table en remplaçant moyenne par min ou max mais c'est plus long). </p>
+    <ul>
+        <li>Max : 320.00 euro</li>
+        <li>Min : 2.08 euro</li>
+        <li>Moyenne : 33.54</li>
+    </ul>
+    <div>
+        <img src = "assets/image_sae2/Qj.png" class="image" width = 600/>
+    </div>
+</article>
+<article class="text-presentation">
+    <h3>k)</h3>
+    <p class = "question">Quelle est la fonction de contact fournisseur la plus représentée ?</p>
+    <p class = "reponse">Les données présente sur la base sont trés imprécise donc, il faut verifier manuellement les données. Avec ce tableau :</p>
+    <p class = "reponse">QBE :</p>
+    <div>
+        <img src = "assets/image_sae2/Qk qbe.jpg" class="image" width = 600/>
+    </div>
+    <p class = "reponse">On obtient le tableau resultat suivant:</p>
+    <div>
+        <img src = "assets/image_sae2/Qk2.jpg" class="image" width = 600/>
+    </div>
+    <p class = "reponse">On observe qu'il y a 6 Représentants, et 7 Chef des ventes, cependant il y a 1 Représentant € et 1 Représentant. D'un point de vue purement technique le rôle le plus présent est donc Chef des ventes, mais avec les information que l'on a on peut déduire que la fonction la plus présente est en fait Representant, peu importe l'orthographe</p>
+
+</article>
+<article class="text-presentation">
+    <h3>l)</h3>
+    <p class = "question">Quels sont les produits conditionnés dans du carton ou dans du verre ?</p>
+    <p class = "reponse">Les produits conditionnés dans du carton ou dans du verre sont dans :</p>
+    <div>
+        <img src = "assets/image_sae2/Ql.jpg" class="image" width = 600/>
+    </div>
+    <div>
+        <img src = "assets/image_sae2/Ql1.jpg" class="image" width = 600/>
+    </div>
+    <div>
+        <img src = "assets/image_sae2/Ql2.jpg" class="image" width = 600/>
+    </div>
+    
+</article> 
+<article class="text-presentation">
+    <h3>m)</h3>
+    <p class = "question">Donner pour chaque fournisseur le nombre de produits qu'il propose en bouteille</p>
+    <p class = "reponse">Voici pour chaque fournisseur le nombre de produits qu'il propose en bouteille</p>
+    <ul>
+        <li>Alyssa Messata : 4</li>
+        <li>Anne Heikkonen : 1</li>
+        <li>Carlos Diaz : 1</li>
+        <li>Chantal Goulet : 1</li>
+        <li>Cheryl Saylor : 3</li>
+        <li>Claudio Sole : 2</li>
+        <li>Guylène Nodier : 1</li>
+        <li>Helena Carbobv : 1</li>
+        <li>Ian Devling : 1</li>
+        <li>Maric Bein : 1</li>
+        <li>Shelley Burke : 2</li>
+        <li>Wendy Mackenzie : 1</li>
+    </ul>
+
+</article> 
+<article class="text-presentation">
+    <h3>n)</h3>
+    <p class = "question">Donner pour chaque fournisseur le nombre de produits qu'il propose en bouteille</p>
+    <p class = "reponse">Le chiffre d'affaire ici correspond a la somme de tout les produits : prix unitaire*Quantité de chaque commande. Avec ce tableau on obtient donc le chiffre d'affaire total généré : 1 648 176,92 €</p>
+    <div>
+        <img src = "assets/image_sae2/Qn.jpg" class="image" width = 600/>
+    </div>
+    
+</article>
+ <article class="text-presentation">
+    <h3>o)</h3>
+    <p class = "question">Est-ce qu’il y a dans la clientèle des clients qui n’ont pas encore passé de commande ?</p>
+    <p class = "reponse">Maël sporto et Julie Kas n'ont pas commandé</p>
+    <div>
+        <img src = "assets/image_sae2/Qo.jpg" class="image" width = 600/>
+    </div>
+    <div>
+        <img src = "assets/image_sae2/Qo1.jpg" class="image" width = 600/>
+    </div>
+    <div>
+        <img src = "assets/image_sae2/Qo2.jpg" class="image" width = 600/>
+    </div>
+
+</article> 
+<article class="text-presentation">
+    <h3>p)</h3>
+    <p class = "question">Dans quelles villes la clientèle est-elle la plus importante ? Citer les 3 premières.</p>
+    <p class = "reponse">les villes qui ont le plus de client sont Paris, Nantes, Lille et Agen.</p>
+    <div>
+        <img src = "assets/image_sae2/Qp.jpg" class="image" width = 600/>
+    </div>
+    <div>
+        <img src = "assets/image_sae2/Qp1.jpg" class="image" width = 600/>
+    </div>
+    <p class = "reponse">Problèmes rencontrés :</p>
+    <ul>
+        <li>Fautes de prénoms (Marie Delamare n’existe pas donc nous avons choisi Joana Delamare, pas de Mikal Pavbo donc on va considérer qu'il s'agit de Mikal Torin avec le code client : PAVBO)</li>
+        <li>Fautes d’orthographe (Suède … )</li>
+        <li>Nous n’avons pas encore fait le TP donc nous n’avons pas vu les principes de base</li>
+    </ul>
+    
+    <footer>
+        <p>Mission 2<br>A rendre pour le 4 octobre<br>par<br>Anatole Jacq<br>Florian Puliero<br>Nicolas Chanez<br>Basile Clément</p>
+        
+    </footer>
+</body>
